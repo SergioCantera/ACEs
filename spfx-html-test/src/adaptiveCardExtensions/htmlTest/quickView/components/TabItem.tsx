@@ -9,9 +9,9 @@ export const TabItem:React.FC<TabItemProps> = ({label,children}) => {
     
     const [details, setDetails] = useState<IQuickViewData | null>(null);
 
-    const handleItemClick = (sku:string) => {
-        if (sku !== null){
-            const _details:IQuickViewData = children.filter((course:IQuickViewData) => course.sku === sku)[0];
+    const handleItemClick = (id:string) => {
+        if (id !== null){
+            const _details:IQuickViewData = children.filter((course:IQuickViewData) => course.id === id)[0];
             setDetails(_details)
         }
         
@@ -24,8 +24,8 @@ export const TabItem:React.FC<TabItemProps> = ({label,children}) => {
                 <p>{details.description}</p>
                 <div>
                     <p>{`Days remaining: ${details.daysRemaining}`}</p>
-                    <p>{`Classification: ${details.cpnt_classification}`}</p>
-                    <p>{`Duration: ${details.componentLength} h`}</p>
+                    <p>{`Classification: ${details.classification}`}</p>
+                    <p>{`Duration: ${details.length} h`}</p>
                     <p>{`Required date: ${new Date(details.requiredDate).toLocaleDateString('es-es')}`}</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@ export const TabItem:React.FC<TabItemProps> = ({label,children}) => {
                 >
                     <ul className={styles.tabCourses}>
                         {children.map((course:IQuickViewData) => (
-                            <li key={course.sku} className={styles.courseItem} onClick={()=>handleItemClick(course.sku)}>
+                            <li key={course.id} className={styles.courseItem} onClick={()=>handleItemClick(course.id)}>
                                 <h4>{course.title}</h4>
                                 <div>
                                     <p>{`Days remaining: ${course.daysRemaining}`}</p>
