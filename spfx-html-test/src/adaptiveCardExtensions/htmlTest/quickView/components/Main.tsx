@@ -4,6 +4,7 @@ import styles from '../QuickView.module.scss';
 import {TabList} from './TabList';
 import {TabItem} from './TabItem';
 import {IQuickViewData} from '../../models/IQuickViewData';
+import * as strings from 'HtmlTestAdaptiveCardExtensionStrings';
 
 export const Main = (props:any) => {  
     const [pending] = useState(getPending(props["0"]))
@@ -31,13 +32,13 @@ export const Main = (props:any) => {
                 <img src={require('../assets/logoSSFF.png')}  className={styles.welcomeImage} />
             </div>
             <TabList activeTabIndex={0}>
-                <TabItem label={`Expire soon (${pending[0]})`}>
+                <TabItem label={`${strings.PendingCourseHeader} (${pending[0]})`}>
                     {pending[1]}
                 </TabItem>
-                <TabItem label={`Expired (${expired[0]})`}>
+                <TabItem label={`${strings.ExpiredCourseHeader} (${expired[0]})`}>
                     {expired[1]}
                 </TabItem>
-                <TabItem label={`Others (${others[0]})`}>
+                <TabItem label={`${strings.OtherCourseHeader} (${others[0]})`}>
                     {others[1]}
                 </TabItem>
             </TabList>
