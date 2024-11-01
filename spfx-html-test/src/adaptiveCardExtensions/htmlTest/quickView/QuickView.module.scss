@@ -1,0 +1,123 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.helloWorld {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.navTabs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.3em;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+} 
+.btnTab { 
+  padding: 0.5em 0.75em;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--link);
+  position:relative;
+  &.active{
+    color:#46010a;
+    font-weight: 500;
+    &::after{
+      content: '';
+      background: #46010a;
+      color:white;
+      position: absolute;
+      left:0;
+      top: 100%;
+      width: 100%;
+      height: 3px;
+    }
+  };
+  &:hover {
+    color: #46010a;
+    font-weight:500;
+  }
+}
+
+.tabPanel {
+  margin: 0;
+  padding: 0;
+}
+
+.tabCourses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  padding: 0;
+  margin: 0 0.5em;
+  list-style: none;
+}
+
+.courseItem {
+  display:flex;
+  flex-direction: column;
+  padding: 0.5em 0.75em;
+  transition: box-shadow 0.3s ease-in-out 0s;
+  background-color: #efefef;
+  border-radius: 0.5em;
+  cursor: pointer;
+  h4 {
+    margin: 0 .5em;
+  };
+  p {
+    margin: 0 .5em;
+  }
+}
+.courseItem:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.detailsCourse {
+  display:flex;
+  flex-direction: column;
+  padding: 0.75em 0.75em;
+  background-color: #efefef;
+  border-radius: 0.5em;
+  h4 {
+    margin: 0 .5em .5em;
+  };
+  p {
+    margin: 0 .5em .5em;
+    font-size: small;
+  };
+  div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: .5em 0;
+  }
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcomeImage {
+  width: 50%;
+  max-width: 320px;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: "[theme:link, default:#03787c]";
+    color: var(--link); // note: CSS Custom Properties support is limited to modern browsers only
+
+    &:hover {
+      text-decoration: underline;
+      color: "[theme:linkHovered, default: #014446]";
+      color: var(--linkHovered); // note: CSS Custom Properties support is limited to modern browsers only
+    }
+  }
+}
