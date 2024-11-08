@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "happy-birthday-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/happyBirthday/HappyBirthdayAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/happyBirthday/HappyBirthdayAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HappyBirthdayAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/happyBirthday/loc/{locale}.js"
+  }
+}

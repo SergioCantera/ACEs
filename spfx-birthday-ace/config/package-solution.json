@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-birthday-ace-client-side-solution",
+    "id": "09592b15-c784-4db1-8ae6-973463442c25",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-birthday-ace description"
+      },
+      "longDescription": {
+        "default": "spfx-birthday-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-birthday-ace Feature",
+        "description": "The feature that activates elements of the spfx-birthday-ace solution.",
+        "id": "9e0e17e4-bd4d-412a-ba92-439a4999fcc8",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-birthday-ace.sppkg"
+  }
+}

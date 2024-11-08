@@ -24,7 +24,6 @@ coverage
 # Visual Studio files
 .ntvs_analysis.dat
 .vs
-.env
 bin
 obj
 
