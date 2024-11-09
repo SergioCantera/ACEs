@@ -2,51 +2,52 @@ import type { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
-import { HappyBirthdayPropertyPane } from './HappyBirthdayPropertyPane';
+import { WorkAnniversaryPropertyPane } from './WorkAnniversaryPropertyPane';
 import {MSGraphClientV3} from '@microsoft/sp-http';
+import {ICardView} from './models/ICardView'
 
-export interface IHappyBirthdayAdaptiveCardExtensionProps {
+export interface IWorkAnniversaryAdaptiveCardExtensionProps {
   title: string;
   iconProperty: string;
   imageUrl: string;
 }
 
-export interface IHappyBirthdayAdaptiveCardExtensionState {
-  givenName: string;
-  birthday: string;
+export interface IWorkAnniversaryAdaptiveCardExtensionState {
+  givenName:string;
+  employeeHireDate:string;
 }
 
-const CARD_VIEW_REGISTRY_ID: string = 'HappyBirthday_CARD_VIEW';
-export const QUICK_VIEW_REGISTRY_ID: string = 'HappyBirthday_QUICK_VIEW';
+const CARD_VIEW_REGISTRY_ID: string = 'WorkAnniversary_CARD_VIEW';
+export const QUICK_VIEW_REGISTRY_ID: string = 'WorkAnniversary_QUICK_VIEW';
 
-export default class HappyBirthdayAdaptiveCardExtension extends BaseAdaptiveCardExtension<
-  IHappyBirthdayAdaptiveCardExtensionProps,
-  IHappyBirthdayAdaptiveCardExtensionState
+export default class WorkAnniversaryAdaptiveCardExtension extends BaseAdaptiveCardExtension<
+  IWorkAnniversaryAdaptiveCardExtensionProps,
+  IWorkAnniversaryAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: HappyBirthdayPropertyPane;  
+  private _deferredPropertyPane: WorkAnniversaryPropertyPane;
 
   public async onInit(): Promise<void> {
     this.state = { 
       givenName:"",
-      birthday: "",
+      employeeHireDate:"",
     };
 
     // registers the card view to be shown in a dashboard
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     // registers the quick view to open via QuickView action
-    this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView())
+    this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
-    return this._fetchData();
+    return this.getMeData();
   }
 
-  private _fetchData() {
+  private getMeData() {
     this.context.msGraphClientFactory.getClient("3").then((client:MSGraphClientV3): void => {
       client.api("/me")
-      .select(["displayName","givenname","birthday"])
-      .get((error, response:any) => {
+      .select(["givenname","employeehiredate"])
+      .get((error, response:ICardView) => {
         this.setState({
           givenName: response.givenName,
-          birthday: response.birthday
+          employeeHireDate: response.employeeHireDate
         })
       })
     })
@@ -54,12 +55,12 @@ export default class HappyBirthdayAdaptiveCardExtension extends BaseAdaptiveCard
 
   protected loadPropertyPaneResources(): Promise<void> {
     return import(
-      /* webpackChunkName: 'HappyBirthday-property-pane'*/
-      './HappyBirthdayPropertyPane'
+      /* webpackChunkName: 'WorkAnniversary-property-pane'*/
+      './WorkAnniversaryPropertyPane'
     )
       .then(
         (component) => {
-          this._deferredPropertyPane = new component.HappyBirthdayPropertyPane();
+          this._deferredPropertyPane = new component.WorkAnniversaryPropertyPane();
         }
       );
   }

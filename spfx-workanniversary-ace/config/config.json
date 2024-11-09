@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "work-anniversary-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/workAnniversary/WorkAnniversaryAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/workAnniversary/WorkAnniversaryAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WorkAnniversaryAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/workAnniversary/loc/{locale}.js"
+  }
+}

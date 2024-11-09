@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-workanniversary-ace-client-side-solution",
+    "id": "1dcf3ce3-50f1-4bfd-9f57-139855626825",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-workanniversary-ace description"
+      },
+      "longDescription": {
+        "default": "spfx-workanniversary-ace description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-workanniversary-ace Feature",
+        "description": "The feature that activates elements of the spfx-workanniversary-ace solution.",
+        "id": "f020fc16-badc-4fc7-8221-b77069559b4f",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-workanniversary-ace.sppkg"
+  }
+}

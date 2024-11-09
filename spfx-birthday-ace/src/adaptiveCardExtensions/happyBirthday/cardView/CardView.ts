@@ -37,7 +37,7 @@ export class CardView extends BaseImageCardView<
     const edad =  now.getFullYear() - date.getFullYear()
     
     return {
-      primaryText: `¡Feliz ${edad} cumpleaños, ${_givenName}!`,
+      primaryText: `¡Feliz ${edad}º cumpleaños, ${_givenName}!`,
       iconProperty: this.properties.iconProperty,
       imageUrl: this.properties.imageUrl || require('../assets/cumple-imagen.jpg'),
       title: this.properties.title || strings.TitleFieldLabel

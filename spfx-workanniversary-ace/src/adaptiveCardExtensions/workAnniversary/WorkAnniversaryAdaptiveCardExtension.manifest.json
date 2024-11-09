@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
-  "id": "7e3b08bb-cfa1-409d-9fc6-796d33ce55c6",
-  "alias": "HappyBirthdayAdaptiveCardExtension",
+  "id": "0cb3a5b0-1858-49f1-a879-6581a538912e",
+  "alias": "WorkAnniversaryAdaptiveCardExtension",
   "componentType": "AdaptiveCardExtension",
 
   // The "*" signifies that the version should be taken from the package.json
@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
-    "title": { "default": "Happy Birthday" },
-    "description": { "default": "HappyBirthday description" },
+    "title": { "default": "Work Anniversary" },
+    "description": { "default": "WorkAnniversary description" },
     "iconImageUrl": "https://res.cdn.office.net/files/fabric-cdn-prod_20230308.001/assets/brand-icons/product-monoline/svg/vivaconnections_32x1.svg",
     "properties": {
-      "title": "Happy Birthday",
+      "title": "Work Anniversary",
       "iconProperty": "",
       "imageUrl":""
     },

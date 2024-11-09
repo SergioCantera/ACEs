@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.19.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "spfx-workanniversary-ace",
+    "libraryId": "1dcf3ce3-50f1-4bfd-9f57-139855626825",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "spfx-workanniversary-ace",
+    "solutionShortDescription": "spfx-workanniversary-ace description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "Generic"
+  }
+}
