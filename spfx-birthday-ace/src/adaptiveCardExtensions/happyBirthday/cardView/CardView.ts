@@ -39,7 +39,7 @@ export class CardView extends BaseImageCardView<
     return {
       primaryText: `¡Feliz ${edad}º cumpleaños, ${_givenName}!`,
       iconProperty: this.properties.iconProperty,
-      imageUrl: this.properties.imageUrl || require('../assets/cumple-imagen.jpg'),
+      imageUrl: this.properties.imageUrl || require('../assets/CumpleImagen.jpg'),
       title: this.properties.title || strings.TitleFieldLabel
     };
   }
